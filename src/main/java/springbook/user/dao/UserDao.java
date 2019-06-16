@@ -21,9 +21,9 @@ public class UserDao {
 	}
 
 	public void add(User user) throws ClassNotFoundException,SQLException{
-		deleteAll();
-		Connection conn = dataSource.getConnection();
 		
+		Connection conn = dataSource.getConnection();
+	
 		PreparedStatement ps = conn.prepareStatement(
 				"insert into users(id,name,password) values(?,?,?)");
 		ps.setString(1, user.getId());
